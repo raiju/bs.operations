@@ -1,0 +1,9 @@
+[Core]
+Name = ReadFile
+Module = Example_readfile
+
+[Documentation]
+Author = Jarosz Yohan
+Version = 0.1
+Website = http://github.com/yjarosz
+Description = Minimal plugin set up
