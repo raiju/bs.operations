@@ -28,12 +28,22 @@ class WithForm(base.OperationPlugin):
         'description' : 'See http://tw2core.readthedocs.org/en/latest/index.html for more information.',
         'path' : ['Tests', 'Examples', 'Simple form'],
         'in' : [{'id' : 'input', 'type' : 'text', 'required' : True}],
-        'out' : [],
+        'out' : [{'id' : 'output1', 'type' : 'file'}, {'id' : 'output2', 'type' : 'file'}],
         'meta' : meta,
         'output' : OutputForm                         # Define the form you want to use
     }
 
     def __call__(self, *args, **kw):     # proceed as usual
         fin = kw.get('input', '')
+        fout = self.temporary_path()
+
+        with open(fout, 'w') as wout:
+            wout.write('output file 1')
+        fout2 = self.temporary_path()
+        with open(fout2, 'w') as wout2:
+            wout2.write('output file 12')
+
+        self.new_file(fout, 'output1')
+        self.new_file(fout2, 'output2')
         return 1
 
