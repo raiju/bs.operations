@@ -5,10 +5,7 @@ meta = {'version': "1.0.0",
         'author': "Yohan Jarosz",
         'contact': "webmaster-bbcf@epfl.ch"}
 
-
-
 # PLUGIN ONE
-
 # import toscawidget2 modules in order to build forms
 import tw2.forms as twf
 
@@ -25,8 +22,9 @@ class WithForm(base.OperationPlugin):
 
     info = {
         'title': 'Simple Form customization',
-        'description': 'See <a href="http://tw2core.readthedocs.org/en/latest/index.html">toscawidget documentation</a> for more information.',
-        'path': ['Tests', 'Examples', 'Simple form'],
+        'description': """See <a href="http://tw2core.readthedocs.org/en/latest/index.html">
+        toscawidget documentation</a> for more information.""",
+        'path': ['Examples', 'User defined forms', 'Static'],
         'in': [{'id': 'input', 'type': 'text', 'required': True}],
         'out': [],
         'meta': meta,
@@ -61,8 +59,9 @@ class WithDynamicForm(base.OperationPlugin):
 
     info = {
         'title': 'Dynamic form',
-        'description': 'See <a href="http://tw2core.readthedocs.org/en/latest/index.html">toscawidget documentation</a> for more information.',
-        'path': ['Tests', 'Examples', 'Dynamic form'],
+        'description': """See <a href="http://tw2core.readthedocs.org/en/latest/index.html">
+        toscawidget documentation</a> for more information.""",
+        'path': ['Examples', 'User defined forms', 'Dynamic'],
         'in': [{'id': 'input', 'type': 'text', 'required': True}],
         'out': [],
         'meta': meta,

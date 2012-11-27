@@ -8,17 +8,21 @@ meta = {'version': "1.0.1",
         'author': "Yohan Jarosz",
         'contact': "webmaster-bbcf@epfl.ch"}
 
+__install_requires__ = []  # beta
+
 
 class Simple(OperationPlugin):
 
     info = {
-        'title': 'SIMPLE',                             # The title of your operation
-        'description': 'A minimal example',          # Describe the operation's goal
-        'path': ['Tests', 'Examples', 'Simple'],    # Under which category the operation will be set
-        # Must be unique across all plugins
-        # First in the list mean higher category
+        'title': 'WriteFile',                                                                 # The title of your operation
+        'description': """As an exemple, this plugin write the input you give in a text file.
+                          You can also put <a href='https://github.com/bbcf/bs.operations/blob/master/Examples.py'>
+                          links</a> to some documentation.
+        """,                                                                                  # Describe the operation's goal
+        'path': ['Examples', 'automatics forms', 'Write output in a file'],                   # Under which category the operation will be set
+                                                                                              # First in the list mean higher category
         'in': [{'id': 'input', 'type': 'text', 'required': True}],    # All input parameters
-        'out': [{'id': 'output', 'type': 'file'}],                     # All output parameters
+        'out': [{'id': 'output', 'type': 'file'}],                    # All output parameters
         'meta': meta,                                # Meta information (authors, version, ...)
     }
 
@@ -39,7 +43,7 @@ class ReadFile(OperationPlugin):
         'title': 'ReadFile',
         'description': "Read the file to find the number of characters and write the result in an output file. "
                         "If randomize is checked, the result is between 0 and the file's number of characters ",
-        'path': ['Tests', 'Examples', 'Read a file'],
+        'path': ['Examples', 'automatics forms', 'Read a file'],
         'in': [{'id': 'fname', 'label': 'File Name', 'type': 'text'},
                 {'id': 'input', 'label': 'File input', 'type': 'file', 'required': True},
                 {'id': 'randomize', 'label': 'Randomize', 'type': 'boolean'}
