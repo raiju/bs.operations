@@ -40,18 +40,30 @@ class WithForm(base.OperationPlugin):
 import tw2.dynforms as twd  # import dynamic modules
 
 
-class DynamicOutputForm(base.DynForm):
-    method = twd.HidingSingleSelectField(label='Select method', options=('This is', 'a-demo'),
-        mapping={
-            'This is': ['one'],
-            'a-demo': ['two', 'three'],
-                })
+class DynamicOutputForm(base.BaseForm):
+    # wrap dynamic content with a HidindTableLayout for exemple
+    class method(twd.HidingTableLayout):
+        method = twd.HidingSingleSelectField(label='Select method', options=('This is', 'a-demo'),
+            mapping={
+                'This is': ['one'],
+                'a-demo': ['two', 'three'],
+                    })
+        one = twf.TextField(label='One')
+        two = twf.TextField(label='Two')
+        three = twf.TextField(label='Three')
 
-    one = twf.TextField(label='One')
-    two = twf.TextField(label='Two')
-    three = twf.TextField(label='Three')
+    class parameters(twd.HidingTableLayout):
+        params = twd.HidingSingleSelectField(label='Select parameters', options=('opt1', 'opt2', 'opt3'),
+            mapping={
+                'opt1': ['a'],
+                'opt2': ['a', 'b'],
+                'opt3': ['a', 'b', 'c'],
+                    })
+        a = twf.TextField(label='1')
+        b = twf.TextField(label='2')
+        c = twf.TextField(label='3')
 
-    # the submit button
+    #the submit button
     submit = twf.SubmitButton(id="submit", value="Submit My job")
 
 
@@ -69,4 +81,16 @@ class WithDynamicForm(base.OperationPlugin):
     }
 
     def __call__(self, *args, **kw):     # proceed as usual
-        return 1
+        print 'got args %s & kw %s' % (args, kw)
+        # get method back :
+        method_selected = kw.get('method:method')
+        method_one = kw.get('method:one')
+        method_two = kw.get('method:one')
+        method_three = kw.get('method:one')
+        # get parameters back
+        params_selected = kw.get('parameters:param')
+        a = kw.get('parameters:a')
+        b = kw.get('parameters:b')
+        c = kw.get('parameters:c')
+
+        return self.display_time()
