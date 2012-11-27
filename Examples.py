@@ -19,7 +19,7 @@ class Simple(OperationPlugin):
                           You can also put <a href='https://github.com/bbcf/bs.operations/blob/master/Examples.py'>
                           links</a> to some documentation.
         """,                                                                                  # Describe the operation's goal
-        'path': ['Examples', 'automatics forms', 'Write output in a file'],                   # Under which category the operation will be set
+        'path': ['Examples', 'Automatics forms', 'Write output in a file'],                   # Under which category the operation will be set
                                                                                               # First in the list mean higher category
         'in': [{'id': 'input', 'type': 'text', 'required': True}],    # All input parameters
         'out': [{'id': 'output', 'type': 'file'}],                    # All output parameters
