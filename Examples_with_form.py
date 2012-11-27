@@ -40,7 +40,7 @@ class WithForm(base.OperationPlugin):
 import tw2.dynforms as twd  # import dynamic modules
 
 
-class DynamicOutputForm(base.BaseForm):
+class DynamicOutputForm(base.DynForm):
     # wrap dynamic content with a HidindTableLayout for exemple
     class method(twd.HidingTableLayout):
         method = twd.HidingSingleSelectField(label='Select method', options=('This is', 'a-demo'),
