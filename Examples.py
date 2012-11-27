@@ -43,7 +43,7 @@ class ReadFile(OperationPlugin):
         'title': 'ReadFile',
         'description': "Read the file to find the number of characters and write the result in an output file. "
                         "If randomize is checked, the result is between 0 and the file's number of characters ",
-        'path': ['Examples', 'automatics forms', 'Read a file'],
+        'path': ['Examples', 'Automatics forms', 'Read a file'],
         'in': [{'id': 'fname', 'label': 'File Name', 'type': 'text'},
                 {'id': 'input', 'label': 'File input', 'type': 'file', 'required': True},
                 {'id': 'randomize', 'label': 'Randomize', 'type': 'boolean'}
