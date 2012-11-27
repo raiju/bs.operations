@@ -2,7 +2,7 @@ BioScript Operations
 ====================
 This project regroup plugins loaded from BioScript.
 
-If you want to add more, please read documentation [here](http://bbcf.epfl.ch/plugins).
+If you want to add more, please check the two Examples, it should be sufficient to start.
 More general documentation about bioscript can be found here [BBCF website](http://bbcf.epfl.ch/bs/).
 
 
