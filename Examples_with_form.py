@@ -25,7 +25,7 @@ class WithForm(base.OperationPlugin):
         'description': """See <a href="http://tw2core.readthedocs.org/en/latest/index.html">
         toscawidget documentation</a> for more information.""",
         'path': ['Examples', 'User defined forms', 'Static'],
-        'in': [{'id': 'input', 'type': 'text', 'required': True}],
+        'in': [{'id': 'input', 'type': 'file', 'required': True}],
         'out': [],
         'meta': meta,
         'output': OutputForm                         # Define the form you want to use
