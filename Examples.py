@@ -74,3 +74,18 @@ class ReadFile(OperationPlugin):
             wout.write(str(nchar))
             # add the file to the result
         self.new_file(fout, 'output')
+
+
+class Error(OperationPlugin):
+    info = {
+        'title': 'Error plugin',
+        'description': 'This plugin ends up with an error.',
+        'path': ['Examples', 'Automatics forms', 'Error'],
+        'in': [{'id': 'a', 'label': 'parameter "a"', 'required': False, 'type': 'text'}],
+        'out': [{'id': 'output', 'type': 'text'}],
+        'meta': meta,
+    }
+
+    def __call__(self, *args, **kw):
+        1 / 0
+        return 1
