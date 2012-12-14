@@ -27,7 +27,7 @@ class QuantifyTableForm(base.BaseForm):
                  1: ['upstream', 'downstream']},
         help_text='Choose a feature set or upload your own',
         validator=twc.Validator(required=True))
-    features = twf.SingleSelectField(label='Custom feature set: ',
+    features = twf.FileField(label='Custom feature set: ',
         help_text='Select a feature file (e.g. bed)',
         validator=twf.FileValidator())
     assembly = twf.SingleSelectField(label='Assembly: ',
