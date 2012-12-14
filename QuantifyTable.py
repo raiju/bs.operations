@@ -29,7 +29,7 @@ class QuantifyTableForm(base.BaseForm):
         validator=twc.Validator(required=True))
     features = twf.FileField(label='Custom feature set: ',
         help_text='Select a feature file (e.g. bed)',
-        validator=twf.FileValidator())
+        validator=twf.FileValidator(required=True))
     assembly = twf.SingleSelectField(label='Assembly: ',
         options=genrep.GenRep().assemblies_available(),
         help_text='Reference genome')
