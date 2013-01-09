@@ -5,7 +5,7 @@ meta = {'version': "1.0.0",
         'author': "Yohan Jarosz",
         'contact': "webmaster-bbcf@epfl.ch"}
 
-# PLUGIN ONE
+###################################################### PLUGIN ONE
 # import toscawidget2 modules in order to build forms
 import tw2.forms as twf
 
@@ -35,8 +35,35 @@ class WithForm(base.OperationPlugin):
         file_input = kw.get('input', '')
         return file_input
 
+###################################################### PLUGIN TWO
 
-# PLUGIN TWO
+
+class OutputForm(base.BaseForm):
+    # the parameter 'input'
+    input = twf.FileField(label_text="My input not required")
+
+    # the submit button
+    submit = twf.SubmitButton(id="submit", value="Submit My job")
+
+
+class WithAnotherForm(base.OperationPlugin):
+
+    info = {
+        'title': 'Another form exemple',
+        'description': """See <a href="http://tw2core.readthedocs.org/en/latest/index.html">
+        toscawidget documentation</a> for more information.""",
+        'path': ['Examples', 'User defined forms', 'Static 2'],
+        'in': [{'id': 'input', 'type': 'file', 'required': True}],
+        'out': [],
+        'meta': meta,
+        'output': OutputForm                         # Define the form you want to use
+    }
+
+    def __call__(self, *args, **kw):     # proceed as usual
+        file_input = kw.get('input', '')
+        return file_input
+
+###################################################### PLUGIN THREE
 import tw2.dynforms as twd  # import dynamic modules
 
 
