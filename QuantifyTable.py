@@ -16,8 +16,7 @@ import tw2.dynforms as twd
 class QuantifyTableForm(base.BaseForm):
 
     signals = base.MultipleFileUpload(label='Signal: ',
-        help_text='Select signal files (e.g. bedgraph)',
-        validator=twf.FileValidator(required=True))
+        help_text='Select signal files (e.g. bedgraph)')
     score_op = twf.SingleSelectField(label_text='Score operation: ',
         options=funcs, help_text='Operation performed on scores within each feature')
     child = twd.HidingTableLayout()

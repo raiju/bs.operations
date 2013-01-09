@@ -24,6 +24,9 @@ import tw2.forms as twf
 import tw2.core as twc
 
 
+__requires__ = ["pysam"]
+
+
 class Bam2WigForm(base.BaseForm):
     sample = twf.FileField(label_text='Test Bam: ',
         help_text='Select main bam file',
