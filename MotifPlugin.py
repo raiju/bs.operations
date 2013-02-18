@@ -3,8 +3,7 @@ from bbcflib import genrep
 from bbcflib.btrack import track, FeatureStream
 import re, os, urllib
 
-#Replace this by genrep.GenRep() once the changes to the GenRep server are pushed through (or replace all 'g's)
-g = genrep.GenRep('127.0.0.1:3000', '')
+g = genrep.GenRep()
 
 import tw2.forms as twf
 import tw2.core as twc
@@ -52,7 +51,7 @@ class MotifForm(DynForm):
         help_text='A file containing the background signal in the .mat format. If this field is left empty, a uniform background distribution will be taken.')
     
     assembly = twf.SingleSelectField(label='Assembly: ',
-        options=genrep.GenRep().assemblies_available(),
+        options=g.assemblies_available(),
         help_text='Assembly used as data source')
     regions = twf.FileField(label='Regions: ',
         help_text='Regions to scan (e.g. bed)')
